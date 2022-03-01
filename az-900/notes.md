@@ -67,39 +67,47 @@ Tour of Azure
 hybrid - on-premise and cloud
 
 vertical - make instance larger
-    With vertical scaling, computing capacity can be increased by adding additional RAM or CPUs to a virtual machine. 
-horizontal - add more instances
-    With horizontal scaling, computing capacity can be increased by adding instances of a resource. 
 
+    - With vertical scaling, computing capacity can be increased by adding additional RAM or CPUs to a virtual machine.
+
+horizontal - add more instances
+
+    - With horizontal scaling, computing capacity can be increased by adding instances of a resource. 
 
 capital expidenture
+
     - significant upfront spending on infrastrure (overall cost falls as time goes on)
     - on-going maintenance and personel
     - assets, and depreciates
 
 operational expenditure
+
     - no upfront costs, pay as you go
     - goes on taxes for this year
 
-
 infrastruture as a service (IaaS)
+
     - complete control over the hardware
     - most flexible
     - think VM
 
 Platform as a Service (PaaS)
+
     - think Terra
 
 Software as a Service (SaaS)
+
     - think Office 365
 
 Serverless Computing
+
     - no hardware managing
     - tasks are being triggered by events
     - seems like taking advantage of the offered products/services
         - e.g. GCPs workflows
 
 deployment models
+
     - public
         - offered over public internet
         - third party
@@ -117,6 +125,7 @@ resources - services
 
 subscriptions and management groups
 Azure subscriptions
+
     - use to create cloud base resources on Azure
     - authenticatd and authorized access
     - logical unit of Azure AD
@@ -140,6 +149,7 @@ Azure subscriptions
         - limit to 10 subscriptions per-account by default
 
 management groups
+
     - containers for subscriptions
     - subscriptions inherit all policies placed by a management group
         - limit regions for VM creation
@@ -154,8 +164,9 @@ management groups
         - single hieracrhy
 
 Resources and resources management
+
     - resources
-        - manageable item available in azure 
+        - manageable item available in azure
             - VMs, apps, networks
             - any azure service
         - must be a member of a resource group, and it can only be in a single group
@@ -170,6 +181,7 @@ Resources and resources management
             - role base access
 
 Azure resource manager (ARM)
+
     - create, update, delete resources
         - google cloud console?
     - many ways to access
@@ -184,11 +196,13 @@ Azure resource manager (ARM)
     - clarify billing
 
 Azure regions
+
     - datacenter in a prticular region
         - e.g.  east-us
     - can host apps on multiple regions for redundancy
 
 Availability zone
+
     - phisically separate datacenter is region
         - if one zone goes down, the others stay up
         - high-speed fiber optic connections
@@ -203,6 +217,7 @@ Availability zone
         - but not all regions have zones
 
 Geographies
+
     - region pair
         - west-us and east-us
         - if one fails it will fall back on the other
@@ -210,8 +225,8 @@ Geographies
         - e.g. hurrican flooding on east coast, or earth quake on west coast
 
 Azure has the most global regions
+
     - brings you app closer to the user
-    - 
 
 ## Module 3: Azure Database, Analytics, & Compute Services
 
