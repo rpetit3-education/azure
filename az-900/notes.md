@@ -235,4 +235,203 @@ Azure has the most global regions
 
 ## Module 3: Azure Database, Analytics, & Compute Services
 
+Azure Cosmos DB
+
+- globally dist, multi model (99.999% availbility)
+- scale
+- fast access via apis (milli second)
+- supports schema less data
+    - gcp's big query?
+- atom record sequence (ARS?)
+
+Azure SQL Database
+
+- Microsoft SQL server
+- features
+    - PaaS
+        - managed service
+    - updates, backups, etc.. handled automatically
+    - 99.999% availibility
+- relational, and non-relationsal (gaph, json, xml)
+- newest features always available
+- azure db migration service
+
+Azure SQL Managed INstance
+
+- PaaS
+- benefits
+    - no longer need to maintain hardware
+    - agility (quick change, updates, backups)
+    - backup retention period
+- specific options
+    - server level collation set at creation
+        - can't change after instance created
+    - Discover->Assess->Migrate->switch over
+
+Azure Database for MySQL
+
+- Uses MySQL
+- useful for LAMP stacks
+- uptime, security, data protections, backups
+- service tiers
+    - small to large
+
+Azure Database for PostgreSQL
+
+- uses PostgreSQL community version
+- all the benefits as previous (availaility, backups, etc...)
+- deployment options
+    - single server
+        - vertical scale (more ram bigger drive)
+        - pricing tiers
+            - basic, general, memory optimized
+    - hyperscale citus
+        - horizontal scale via sharding
+        - query paralellization
+
+Big data and analytics
+
+- big data
+    - large volumes of data
+- Azure services
+    - synapse analytics
+        - query data on you terms, serverless or with servers
+    - hdinsight
+        - spark, hadoop, 
+        - extractions o
+    - data bricks
+        - spark
+        - python, scala, r and sql
+    - data lakes analytics
+        - write queries 
+        - only pay for job while running
+
+### Compute fundamentals
+
+Azure compute services
+
+- disks, processors, memory, etc...
+- vitual machines
+    - software emulations of physical computer
+    - IaaS
+    - total control of hardware and software
+    - VM Scale Sets
+        - deploy and manage group of identical VMs
+        - go up or down based on demand
+- contaier services and kubernetes
+    - bring your own container
+    - kubernetes
+- app services
+    - PaaS
+- Azure Functions
+    - work in response to an event
+        - rest request, trigger, timer, etc...
+
+When to use Azure VMs?
+
+- total control of OS
+- ability to run costom software
+- custom configs
+- VM Image
+    - template to create VM, includdes OS and some tools
+    - can custom VM images be made? similar to AWS AMI
+- reasons
+    - during testing and development
+    - running apps in the clous
+    - expanding datcenter
+    - disaster recovery
+- "lift and shift"
+- VM scale sets
+    - load balanced identical machines
+    - centrally manage, config numerous VMs easily
+- Azure Batch
+    - large scale parallel bactch jobs
+        - HPC
+    - synonymous with AWS Batch
+    - plan to use this for Nextflow
+
+Azure container services
+
+- respond to changes on demand
+- docker
+
+Kubernetes
+
+- container orchestrator
+- distrubted architecure
+- managing container based workflows
+
+Microservices
+
+- collection of small autonomous services
+    - Website example
+        - container hosting front-end
+        - container hosting backend
+        - another hosting storage
+- each microservice and be scalled independently
+- if a service goes down, it shouldn't cause the whole app to fail
+- Use APIs to communicate
+
+Azure App Service
+
+- build and host web apps, and other types of apps
+- supports windows and linux
+- can deploy from git repos
+- app service plan
+    - determines ahow much resources your app needs
+    - there is a free-tier
+- Web Jobs
+    - run programs
+
+Azure Functions
+
+- event driven
+    - triggered by things like, time, api, queues, etc...
+    - GCP workflows?
+- serverless computing
+    - abstraction of servers, infrastructure, etc...
+    - never explicitly researve servers
+- micro billing
+    - only pay for time the code ran
+
+Azure Funcitons and Logic Apps
+
+- Functions
+    - can be pretty much any language
+    - work should be complted super fast
+    - not really meant for long running jobs
+    - stateless and stateful
+    - can be migrated to VM
+- Logic Apps
+    - trigger logic based on event
+    - executes workflows
+    - creates logic app instance
+    - created via GUI on azure
+        - json schema
+        - 200 plus connector and processing blocks
+
+Windows Virtual Desktop
+
+- basically runnning windows on VMs
+- cloud hosted windows
+- acces from anywhere
+- why?
+    - best user experience
+    - no need to purchase machines
+        0 can easily vertical scale
+    - you are screwed though if internet goes out!
+    - can make personal persistent desktops
+    - centralized security
+        - 2fa, data access
+        - reduced chance of sensitive data on personal machine
+- simplified management
+    - can load balance
+    - can allocate users on a single machine
+        - only avialable on Azure (multiple users using same machine at same time as different users)
+- can save money with reservations
+    - e.g. pay for 3 years up front
+- can use licenses you already own to save costs
+- separates the compute enviroment from the users device
+    - no PHI on the user machine
+
 ## Module 4: Azure Storage & Networking Services
