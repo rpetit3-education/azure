@@ -435,3 +435,112 @@ Windows Virtual Desktop
     - no PHI on the user machine
 
 ## Module 4: Azure Storage & Networking Services
+
+Azure Storage
+
+- create azure storage account
+    - same as bucket?
+- Disk storage
+    - Azure VMs use Azure Storage, but disks attached to VM cannot be accessed on Azure Storage
+    - many different speeds
+    - VM can have multiple disks attached
+- Blob Storage
+    - text or binary
+    - unstructured, so no limits on types of data stored
+    - does not require thinking about disks
+    - upto 8tb of data for VMs
+- Azure Files
+    - mounted on the cloud or windows, linux, macos
+    - samba share
+    - reasons to use
+        - on premises apps
+        - store configs for multiple VMs
+        - write data to share and process later
+    - data is encrypted at rest
+    - can access via url
+- blob storage tiers
+    - hot access
+        - storaes data accesed frequently
+    - cool access
+        - must be sotread for 30 days
+        - lower availability
+    - archive
+        - must be stored for 180 days
+        - stores data offline, charges incurred for bringing back online
+
+Azure Networking
+
+- Azure virtual networks
+    - multiple isolated virtual networks
+    - VM can connected to internet by default
+    - can connect multiple services and vms
+    - can span local and azure
+    - point to site virtual netowrks
+        - encryted
+    - site-to-site
+        - linked on on prem VPN
+        - Azure devices appear on local netwrok
+    - Azure ExressRoute
+        - doesnot travel over internet
+    - Network Security Groups
+        - multiple inbound/outbound rules
+    - Network Virutal Applieance
+        - emulates locla hardware
+        - running a firewall
+    - Virtual networking peering
+        - link virtual networks
+        - user defined routing
+- Virtual network settings
+    - basic to advanced settings
+        - ddos protect, subnets, vnets, etcc
+    - name must be unique
+    - address space
+        - similar to IP adressing scheme
+    - subscription on applies if there are multiple subscriptions
+    - subnet names have controlled characters
+    - DDoS protection is a paid feature
+    - additional settings
+        - network security group created separate
+        - linked to vnet, and routes created
+        - settings can be chaged on console or cli
+- Azure VPN gateway
+    - connect private networks over public space
+    - site-to-site
+    - point-to-site
+    - network-to-network
+    - VPN type
+        - policy-based
+            - static IPs
+            - support for IKEv1 only
+            - static routing
+            - legacy compatibility
+        - route-based
+            - IPSec tunnels are used
+                - don't need to know all the IPs
+            - more resiliant to changes
+            - IKVE2 support
+            - wildcard selectors
+    - Gateways come in Tiers
+    - only one VPN gateway in a virtual network
+    - on-prem resources
+        - static ipv4
+    - can have redundant deployments
+- Azure ExpressRoute
+    - any-to-any connecitons
+    - do not go over the public internet
+    - Layer 2
+        - data layer
+    - Layer 3
+        - networking layer
+        - redundant connections use L3
+    - "connectivity partners"
+    - ExpressRoute Global Reach
+        - connect multiple express route
+    - co-located providers
+        - data center is located in datacenter
+    - point to point
+        - datacenter
+    - any-to-any
+        - uses WAN
+    - security considerations
+        - private connection, no exposure to public internet
