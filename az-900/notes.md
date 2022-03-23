@@ -544,3 +544,234 @@ Azure Networking
         - uses WAN
     - security considerations
         - private connection, no exposure to public internet
+
+## Azure Management Tools and Security and Solutions Course
+
+### Module 1: AI Services
+
+- adapts and improves decisions making overtime
+- APIs
+- Web API
+- Web API Endpoint
+- Rest API
+- Types
+    - Deep learning
+        - nueral network
+    - Machine Learning
+        - use existing data to build model
+
+- Azure offerings
+    - Azure Machine Learning
+        - build, deliver, train, evaulate, create, deploy (as API)
+        - complete control over everything
+    - Azure Cognitive Services
+        - pre-built models (e.g. text analysis)
+        - Language services
+        - Speech services
+            - text to speech to text
+        - Vision services
+        - Decision services
+    - Azure Bot services
+        - virtual assistant
+
+- Criteria choosing AI Service
+    - are you building to interact with humans via natural language
+        - bot services
+    - power automate
+    - images, video or audio?
+        - Use cognitive services
+    - predict behavior?
+        - use cognitive services personalizer
+    - predict future on past?
+        - nachine learning services
+
+- Azure Cognitive Services Translkator
+    - text to text translation service
+    - might be useful for docs sites
+
+- Software DevOps Tools
+    - Devop Services
+        - Azure boards (kanban boards
+        - Azure repos
+        - Azure Pipelines (CI)
+        - Azure Test Plans
+        - Azure Artifacts
+        - much more granular permissions
+    - Github/Github Actions
+        - most open-source
+    - Devtest Labs
+        - test apps across different envrionments
+            - eg. test new feature on old OS version
+        - anything that can be deployed on Azure VM can be tested
+
+### Module 2: Monitoring Services and managing/configuring
+
+- identifying options
+    - perfomance
+    - cost
+    - security
+    - resilience
+    - diagnostic
+    - outage cases
+- Azure Advisor
+    - evoluate reources and make recommendations
+        - via api and portal
+        - reliability, security, preformance, costs, operational excellence
+- Azure Monitor
+    - collecting logging data
+    - realtime alerts
+    - auto scaling via events
+    - Application Insights
+        - for event triggering
+- Azure Health Service
+    - azure service incidents and planned maintenance
+    - Service Issues
+        - problems in Azure that affect you at the moment
+    - Service Health
+        - upcoming changes in Azure that might affect you
+
+- management tools
+    - visual tools
+    - code based tool
+        - CLI?
+        - infrastrure as code
+            - imperative code
+            - declarative code
+    - Azure Portal
+        - web-based interface
+            - GCP console, AWS console
+    - Azure mobile app
+        - monitor, fix, run commands
+    - Azure PowerShell
+        - execute cmdlets
+        - routine setup, treardown, deployment
+        - repeatable
+        - cloudshell, windows, linux, mac
+    - Azure CLI
+        - excute commands in bash
+        - pretty much every task is available in CLI
+    - Azure Resource Management Templates
+        - JSON templates, creates in parallele
+        - can execute bash before or after setup
+
+Azure Serverless Technologies
+- Serverless Computing
+    - execution env setup for you
+        - triggered by timer for request
+    - only pay for what you use, no need to have server up all the time
+    - term is a misnomer
+- Azure Functions
+    - Single method or function
+    - atomic nature, many common languages
+        - python script to check a bucket for new data
+    - stateless env, behaves as if restarted each run
+    - do work in response to an event
+    - seconds to process
+    - API requests and runtime
+- Azure Logic Apps
+    - low or no code solution
+    - designed in a web based thing
+    - link together functions on a gui
+    - 200+ connectors
+    - orchestration process (e.g. multiple steps)
+    - API requests and the connectors used
+- Azure IoT Services
+    - Devices with sensors that store the information
+    - Azure IoT Hub
+        - connect all your devices in a single place
+        - can route messages from IoT device to other Azure services (e.g. AI)
+    - Azure IoT Central
+        - a dashoard built on top of IoT Hub
+        - Has starter templates for multiple industries
+            - dashboard
+            - device templates
+    - Azure Sphere
+        - IoT built for Azure
+        - Microcontroller Unit (MCU)
+        - Linux 
+        - Azure Sphere Securty Service (AS3)
+
+Security 
+- Azure Security Center
+    - Monitoring service to see your "security posture"
+        - "security posture" - how well you predict and respond to security threats
+        - lists posisble security vulnerbilities
+            - e.g. in-secure program version
+        - provides a "score" to help demonstrate security posture
+        - KPIs - key performance indicators
+        - cenralized view of all security alerts
+        - Azure Logic Apps can be used to help address security threats (e.g. send email to admin)
+
+- Azure Sentiel
+    - SIEM - security information and event management
+    - builtin analytics, custom analytics
+    - Azure Monitor Workbooks
+        - respond to security threats
+        - can be automatic or manual
+        - example is blocking malicious IP addresses
+
+- Azure Key Vault
+    - centralized storage for secrets
+        - sensitive info for tokens, passwords, etc...
+    - SSL and TLS certs
+    - encryption keys
+    - hardware encryptions
+
+- Azure Dedicated Hosts
+    - Dedicated VMs which have you has the only user on the phycical machine
+        - Standard VMs are isolated from one another, but might sit on the same physical machine
+    - helps address compliance requirements for security
+
+- "Defense in Depth"
+    - protect info from being accessed and stolen
+    - layers of protection
+        - physical
+            - access to building etc...
+            - mirosoft has this under control
+        - identity and access
+            - access to the infrastruture
+            - access granted to only whats needed
+        - perimeter
+            - use DDoS protections
+            - perimeter firewalls
+        - network
+            - deny by default, restrict inbound access
+            - limit outbound access
+        - compute
+            - secure access to VMs
+            - latest updates
+        - application
+            - ensure apps are secure
+        - data
+            - secure storage
+    - CIA
+        - confidentiality - restrict access to only users who need access
+        - integrity - prevent unauthorized changes to information
+        - availability - services are running and only users with access can acccess
+
+- Azure Firewall
+    - network access rules
+    - secure communications between connections
+    - Application Rules
+        - FQDN
+    - Network rules
+        - IP based rules
+    - NAT
+    - Web application firewall
+
+- Azure DDOS Protections
+    - Overwhelm application to bring it down or unusable by user
+    - Analyze and discard DDOS traffic
+    - help manage costs
+        - DDOS attack could cause services to scale up
+    - Tiers
+        - Basic
+        - Standard
+            - volumetric attacks, protocol attacks, resource-layer attacks
+            - target packets
+    - Always on
+
+- Network Security Groups
+    - filter network traffice between services
+    - "internal" firewall
+
