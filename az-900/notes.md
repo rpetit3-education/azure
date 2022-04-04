@@ -775,3 +775,183 @@ Security
     - filter network traffice between services
     - "internal" firewall
 
+Azure services and lifecycles
+- Azure identity services
+    - primary security boundry
+    - Authentication vs Authorization
+        - AuthN
+            - process of estabilishing identity
+            - challenge with set of creds
+            - access control
+        - AuthZ
+            - Access level of the AuthN user
+            - Permissions (e.g. you are authenticated, but only have access to X)
+- Azure Active Directory
+    - "Azure AD"
+    - MS Cloud based identity and access service
+        - can access external and internal resources
+    - Sign on monitoring (e.g. unknown devices)
+    - "Tenant"
+        - organization in active directory
+    - main services
+        - authentication, single sign-on (SSO), application management, device management
+    - can connect local AD to Azure AD
+        - Azure AD Connect syncs between both systems
+- Single Sign On (SSO)
+    - one ID and one password
+    - simplifies security
+
+Cloud Governance Strategy
+- Cloud Adoption Framework for Azure
+    - guidance for implementing in the cloud
+    - stages
+        - define, plan, read, adopt, govern/manage
+    - tools/docs on standard practices
+    - why move?
+        - motivations, business outcomes, business case, prioritive project
+            - e.g. nextflow
+    - Make a plan
+        - digital estate- resources you plan to move to cloud
+        - initial organize alignment
+        - skill readiness plan
+        - cloud adoption plan
+    - landing zone
+        - azure setup guide
+        - cloud infrastructure and governance
+        - expand as needed
+    - migrate to the cloud
+        - migration guide to deploy first project
+        - innovate as needed
+    - things change overtime, goveranance and management should adapt to these changes
+- Subscription governance strategy
+    - resources
+        - services you create
+    - resource groups
+        - combine resources
+    - subscription
+        - groups together user accounts and resources
+        - used ot manage costs
+    - management groups
+        - manage multiple subscriptions
+    - Put together a "Cloud custodian Team" to oversee this
+    - one billing report per subscritption
+        - can organize subscriptions by groups
+        - deployment boundry
+            - dev vs prod subscriptions
+    - Subscription limits
+        - e.g. 10 express routes
+- Role based access control
+    - grant only the rights needed to do the job
+    - "Rbac"
+    - assign role (permissions) and scope (level it applies to)
+        - scopes are parent-child
+        - role examples: reader, contributor, owner, custom
+        - owner and management scope is owner of everthing in under the management group
+    - RBAC is enforced on all Azure requests (portal, powershell, cli)
+        - not applied and the data level (e.g. owner won't be sudo on linux VM)
+    - role assinments
+        - attach a role, security principle at a scope
+        - roles can be assigned to users, groups, and identity types
+            - groups would inherit all things from the role
+    - manage access control on IAM
+- Azure Resource Locking
+    - a warning system that a resource should not be changed
+    - can not delete
+        - authorized can read write
+    - readonly
+        - can change anything
+    - To change, remove the lock, make change, lock it again
+    - can be combined with Azure blueprints
+        - e.g. a resource lock must exist and if it does not Azure will create it
+- Organize using resource tags
+    - provide extra data about hte resource (metadata)
+    - group by tag
+        - see costs of "tags"
+        - e.g. tag as bacteria
+    - Can manage with Azure policy
+        - also all the other metods (portal, cli, powershell, API)
+    - Key-Value pairs
+        - e.g. pipeline: bactopia
+- Azure Policy
+    - allows management and auditing 
+    - many pre-diefined industry standards
+    - create policy
+        - what to evaluate and what action to take
+        - e.g. region lock
+    - assign policy to scope
+        - inherited by all members of the scope
+        - can exclude child in scope
+    - policy evaluation
+        - happens once per hour
+        - make sure policy is applied where it should be applied
+    - Enable Monitoring in Security Center
+        - can monitpor for security issues
+        - has policy for HIPAA
+- Azure Blueprints
+    - Templates for implementing policies across subscriptions
+        - role assingmnets
+        - policy
+    - Blueprints are versioned
+        - called "artifacts"
+    - there's an audit trail
+        - what was defined and what was applied
+
+Privacy, Compliance, and Da Protection Standards
+    - "control" a good standard
+    - azure government is phycically isolated
+
+Managing Azure Costs
+    - Total Cost of Ownership Calculator (TCO)
+        - estimate costs overtime using on-site vs Azure
+        - don't need subscription
+        - define workloads
+            - what you are doing on-site (servers, databases, storage, netowrking)
+        - assumptions for costs
+            - software assurance, replication, cost assumptions
+            - electricity costs, storage costs, labor costs
+        - generate report
+            - 1-5 year spans in the reports
+    - Purchase Azure Services
+        - types of subscriptions?
+            - free and paid subscriptions
+                - free trial - 12 months of services and credits
+                - pay as you go - pay for what you use (can get volume or prepay discounts)
+                - member offers
+        - ways to sign up
+            - enterprise aggreement, typically 3 year agree ment
+            - direct from web
+            - cloud service provider
+    - factors affecting costs
+        - resource type, usage, subscription types
+        - Azure marketplace pay for licensed services
+        - cost calculator is similar to AWS's
+    - manage and minimize costs
+        - spending limits can help prevent over spending
+            - e.g. only use $100 afterwards shut everything down
+        - quoatas
+        - reservations and save costs (up to 70%)
+            - 1-3 year reservations
+        - costs can vary by region
+        - you pay for egress between regions and outsize azure
+        - Azure Cost Management + Billing
+        - deallocate during off hours
+            - can start and stop on schedule
+        - migrate from IaaS to PaaS
+            - migrate SQL from VM to PaaS
+
+Azure Service Level Aggreements and Service Lifecycles
+    - SLAs?
+        - formal agreement between azure and customer
+        - each azure service has a SLA
+        - don't need suscription to review SLAs
+        - can use SLA to understand how you can get credits back (e.g. downtime greater than SLA)
+            - can't get credits for free services
+            - SLA includes times you must submit credit claim
+    - preview services
+        - test out services that Azure is planning to role out
+        - each previews have their own terms
+        - some don't include customer service
+        - not meant for production
+
+
+AZ-900 Practices Exams
