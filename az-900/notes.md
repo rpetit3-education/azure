@@ -896,11 +896,11 @@ Cloud Governance Strategy
     - there's an audit trail
         - what was defined and what was applied
 
-Privacy, Compliance, and Da Protection Standards
+- Privacy, Compliance, and Da Protection Standards
     - "control" a good standard
     - azure government is phycically isolated
 
-Managing Azure Costs
+- Managing Azure Costs
     - Total Cost of Ownership Calculator (TCO)
         - estimate costs overtime using on-site vs Azure
         - don't need subscription
@@ -939,7 +939,7 @@ Managing Azure Costs
         - migrate from IaaS to PaaS
             - migrate SQL from VM to PaaS
 
-Azure Service Level Aggreements and Service Lifecycles
+- Azure Service Level Aggreements and Service Lifecycles
     - SLAs?
         - formal agreement between azure and customer
         - each azure service has a SLA
